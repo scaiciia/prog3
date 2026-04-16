@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Store - Admin</title>
+</head>
+<body>
+    <header>
+        <h1>Panel de Administración</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Volver a la Tienda</a></li>
+                <li><a href="#">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Gestión de Productos</h2>
+        <button>+ Nuevo Producto</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Imagen</th>
+                    <th>Nombre</th>
+                    <th>Categoría</th>
+                    <th>Precio</th>
+                    <th>Stock</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><img src="https://demo01.menudigital.ar/wp-content/uploads/2022/06/triple-burger.webp" alt="Hamburguesa triple" height="50" width="50"></td>
+                    <td>Hamburguesa Triple</td>
+                    <td>Hamburguesas</td>
+                    <td>$25000</td>
+                    <td>15</td>
+                    <td><a href="#" >Editar</a>/<a href="#" >Eliminar</a></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><img src="https://flaming.ar/wp-content/uploads/2025/01/1001697-1-scaled.jpg" alt="Pizza Especial" height="50" width="50"></td>
+                    <td>Pizza especial</td>
+                    <td>Pizzas</td>
+                    <td>$27000</td>
+                    <td>35</td>
+                    <td><a href="#" >Editar</a>/<a href="#" >Eliminar</a></td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td><img src="https://comedera.com/wp-content/uploads/sites/9/2022/11/papas-fritas-con-queso-cheddar-PG_PFCQCY30320002.jpg" alt="Papas con cheddar y panceta" height="50" width="50"></td>
+                    <td>Papas con Cheddar y Panceta</td>
+                    <td>Papas Fritas</td>
+                    <td>$17000</td>
+                    <td>40</td>
+                    <td><a href="#" >Editar</a>/<a href="#" >Eliminar</a></td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td><img src="https://viejodave.com.ar/wp-content/uploads/2024/02/categoria-bebidas.jpg" alt="Coca-cola" height="50" width="50" ></td>
+                    <td>Coca-cola</td>
+                    <td>Bebidas</td>
+                    <td>$10000</td>
+                    <td>50</td>
+                    <td><a href="#" >Editar</a>/<a href="#" >Eliminar</a></td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td><img src="https://okdiario.com/img/2016/08/05/receta-de-flan-de-dulce-de-leche-facil-2.jpg" alt="Flan" height="50" width="50"></td>
+                    <td>Flan</td>
+                    <td>Postres</td>
+                    <td>$13000</td>
+                    <td>12</td>
+                    <td><a href="#" >Editar</a>/<a href="#" >Eliminar</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <details>
+            <h3>📝 Agregar Producto Rápido</h3>
+            <form>
+                <label for="nombre-producto">Nombre del Producto:</label>
+                <input type="text" id="nombre-producto">
+                <label for="precio">Precio:</label>
+                <input type="number" id="precio">
+                <label for="stock">Stock Inicial:</label>
+                <input type="number" id="stock">
+                <label for="categoria">Categoría:</label>
+                <select id="categoria">
+                    <option value="Hamburguesas">Hamburguesas</option>
+                    <option value="Pizzas">Pizzas</option>
+                    <option value="Papas Fritas">Papas Fritas</option>
+                    <option value="Bebidas">Bebidas</option>
+                    <option value="Postres">Postres</option>
+                </select>
+                <label for="descripcion">Descripción:</label>
+                <textarea id="descripcion"></textarea>
+                <button type="submit">Guardar Producto</button>
+            </form>
+        </details>
+    </main>
+    <footer>
+        <p>Panel de Administración - Food Store v1.0</p>
+    </footer>
+</body>
+</html>
