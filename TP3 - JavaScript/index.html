@@ -3,9 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/syles.css">
     <title>Food Store</title>
 </head>
 <body>
-    
+    <header>
+        <h1>Food Store</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Mis Pedidos</a></li>
+                <li><a href="#">Carrito</a></li>
+                <li><a href="admin.html">Panel Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+    <aside>
+        <h2>Categorias</h2>
+        <ul id="lista-categorias">
+            
+        </ul>
+    </aside>
+    <main>
+        <form id="formulario-buscador">
+            <label for="buscador" >Buscar productos</label>
+            <input id="buscador" type="text" placeholder="Ej.: Hamburguesa" >
+            <button type="submit">Buscar</button>
+        </form>
+        <h2>Productos destacados</h2>
+        <section id="contenedor-productos">
+            
+        </section>
+    </main>
+    <footer>
+        <p>© 2026 Food Store. Todos los derechos reservados.</p>
+        <div>
+            <p>Contacto:</p>
+            <a href="mailto:info@foodstore.com">info@foodstore.com</a>
+        </div>
+    </footer>
+    <script src="./js/data.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 </html>
