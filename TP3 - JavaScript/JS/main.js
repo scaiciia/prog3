@@ -9,6 +9,10 @@ function cargarCategorias() {
     });
 }
 
+function mostrarMensaje(prod) {
+    alert(`Se agrego el producto '${prod}' a la canasta.`);
+}
+
 function cargarProductos() {
     productos.forEach(prod => {
         const articulo = document.createElement("article");
@@ -35,6 +39,7 @@ function cargarProductos() {
         const agregarCarrito = document.createElement("button");
         agregarCarrito.textContent = "Agregar al Carrito";
         contenedorBotones.append(verDetalles, agregarCarrito);
+        agregarCarrito.addEventListener("click", () => mostrarMensaje(prod.nombre));
         articulo.append(contenedorImg, contenedorInfo, contenedorBotones);
         contenedorProductos.appendChild(articulo);
     });
