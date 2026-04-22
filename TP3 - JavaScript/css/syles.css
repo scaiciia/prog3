@@ -16,7 +16,3 @@
 body {
     background-color: var(--color-fondo);
 }
-
-.prod-destacado img {
-    width: 300px;
-}

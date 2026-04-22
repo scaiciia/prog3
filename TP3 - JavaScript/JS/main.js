@@ -1,6 +1,7 @@
+const listaCategorias = document.getElementById("lista-categorias");
+const contenedorProductos = document.getElementById("contenedor-productos");
 
 function cargarCategorias() {
-    const listaCategorias = document.getElementById("lista-categorias");
     categorias.forEach(cat => {
         const li = document.createElement("li");
         const a = document.createElement("a");
@@ -12,13 +13,17 @@ function cargarCategorias() {
 }
 
 function cargarProductos() {
-    const contenedorProductos = document.getElementById("contenedor-productos");
     productos.forEach(prod => {
         const articulo = document.createElement("article");
         articulo.className = "prod-destacado";
+        const contenedorImg = document.createElement("div");
+        contenedorImg.className = "contenedorImg";
         const img = document.createElement("img");
         img.src = prod.imagen;
         img.alt = prod.descripcion;
+        contenedorImg.appendChild(img);
+        const contenedorInfo = document.createElement("div");
+        contenedorInfo.className = "contenedorInfo";
         const nomProd = document.createElement("h3");
         nomProd.textContent = prod.nombre;
         const desc = document.createElement("p");
@@ -28,13 +33,15 @@ function cargarProductos() {
         const precio = document.createElement("strong");
         precio.textContent = prod.precio;
         contenedorPrecio.appendChild(precio);
+        contenedorInfo.append(nomProd, desc, contenedorPrecio);
         const contenedorBotones = document.createElement("div");
+        contenedorBotones.className = "contenedorBtn";
         const verDetalles = document.createElement("button");
         verDetalles.textContent = "Ver Detalles";
         const agregarCarrito = document.createElement("button");
         agregarCarrito.textContent = "Agregar al Carrito";
         contenedorBotones.append(verDetalles, agregarCarrito);
-        articulo.append(img, nomProd, desc, contenedorPrecio, contenedorBotones);
+        articulo.append(contenedorImg, contenedorInfo, contenedorBotones);
         contenedorProductos.appendChild(articulo);
     });
 }
