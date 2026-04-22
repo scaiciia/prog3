@@ -16,3 +16,7 @@
 body {
     background-color: var(--color-fondo);
 }
+
+img {
+    width: 300px;
+}

@@ -4,10 +4,7 @@ const contenedorProductos = document.getElementById("contenedor-productos");
 function cargarCategorias() {
     categorias.forEach(cat => {
         const li = document.createElement("li");
-        const a = document.createElement("a");
-        a.textContent = cat;
-        a.href = "#";
-        li.appendChild(a);
+        li.innerHTML = `<a href=# >${cat}</a>`;
         listaCategorias.appendChild(li);
     });
 }
@@ -28,12 +25,9 @@ function cargarProductos() {
         nomProd.textContent = prod.nombre;
         const desc = document.createElement("p");
         desc.textContent = prod.descripcion;
-        const contenedorPrecio = document.createElement("p");
-        contenedorPrecio.textContent = "$"
-        const precio = document.createElement("strong");
-        precio.textContent = prod.precio;
-        contenedorPrecio.appendChild(precio);
-        contenedorInfo.append(nomProd, desc, contenedorPrecio);
+        const precio = document.createElement("p");
+        precio.innerHTML = `$<strong>${prod.precio}</strong>`;
+        contenedorInfo.append(nomProd, desc, precio);
         const contenedorBotones = document.createElement("div");
         contenedorBotones.className = "contenedorBtn";
         const verDetalles = document.createElement("button");
