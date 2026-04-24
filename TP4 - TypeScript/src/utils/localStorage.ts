@@ -10,3 +10,21 @@ export const getUSer = () => {
 export const removeUser = () => {
   localStorage.removeItem("userData");
 };
+export const getUsers = () => {
+  const usersStorage =  localStorage.getItem("users");
+  if (!usersStorage) {
+    return [];
+  }
+
+  try {
+    const users:IUser[] = JSON.parse(usersStorage);
+    return users;
+  } catch(error) {
+    console.error("Error al obtener los usuarios: ", error);
+    return [];
+  }
+};
+export const saveUsers = (users: IUser[]) => {
+  const parseUsers: string = JSON.stringify(users);
+  localStorage.setItem("users", parseUsers);
+}
