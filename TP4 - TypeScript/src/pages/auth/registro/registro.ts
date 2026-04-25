@@ -21,6 +21,11 @@ if (form && inputEmail && inputPassword) {
         }
 
         const usuarios: IUser[] = getUsers();
+        if (usuarios.find(u => u.email == valueEmail)) {
+            alert("Este usuario ya fue registrado");
+            console.error("Usuario existente");
+            return;
+        }
 
         const usuario: IUser = {
             email: valueEmail,
