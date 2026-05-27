@@ -1,5 +1,7 @@
 package main.domain;
 
+import java.util.Objects;
+
 import main.domain.base.Base;
 
 public class Producto extends Base {
@@ -68,6 +70,26 @@ public class Producto extends Base {
 
     public void setDisponible(boolean disponible) {
         this.disponible = disponible;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (!super.equals(o)) {
+            return false;
+        }
+
+        Producto producto = (Producto) o;
+        return Objects.equals(nombre, producto.nombre);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), nombre);
+    }
+
+    @Override
+    public String toString() {
+        return "Producto{" + super.toString() + ", nombre='" + nombre + "', descripcion='" + descripcion + "', precio=$" + precio + ", stock=" + stock + ", imagen='" + imagen + "', disponible=" + disponible + "}";
     }
 
 }
