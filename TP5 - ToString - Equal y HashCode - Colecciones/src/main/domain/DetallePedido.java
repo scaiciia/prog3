@@ -1,5 +1,7 @@
 package main.domain;
 
+import java.util.Objects;
+
 import main.domain.base.Base;
 
 public class DetallePedido extends Base {
@@ -46,6 +48,26 @@ public class DetallePedido extends Base {
 
     public void setProducto(Producto producto) {
         this.producto = producto;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (!super.equals(o)) {
+            return false;
+        }
+
+        DetallePedido detalle = (DetallePedido) o;
+        return Objects.equals(producto, detalle.producto);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), producto);
+    }
+
+    @Override
+    public String toString() {
+        return "DetallePedido{" + super.toString() + ", cantidad=" + cantidad + ", subtotal=$" + subtotal + ", producto=" + (producto != null ? producto.getNombre() : "Sin producto") + "}";
     }
 
 }
