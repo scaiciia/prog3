@@ -75,4 +75,12 @@ public class Usuario extends Base {
         this.rol = rol;
     }
 
+    public Set<Pedido> getPedidos() {
+        return this.pedidos;
+    }
+
+    public void addPedido(Pedido pedido) {
+        this.pedidos.add(pedido);
+    }
+
 }
