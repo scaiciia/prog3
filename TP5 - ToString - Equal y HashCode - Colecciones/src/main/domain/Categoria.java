@@ -49,7 +49,7 @@ public class Categoria extends Base {
         }
 
         Categoria cat = (Categoria) o;
-        return Objects.equals(nombre, cat.nombre);
+        return Objects.equals(nombre, cat.getNombre());
     }
 
     @Override
@@ -59,7 +59,9 @@ public class Categoria extends Base {
 
     @Override
     public String toString() {
-        return "Categoria{" + super.toString() + ", nombre='" + nombre + "', descripcion='" + descripcion + "'}";
+        return "Categoria{" + super.toString() +
+                ", nombre='" + nombre + '\'' +
+                ", descripcion='" + descripcion + '\'' + '}';
     }
 
 }

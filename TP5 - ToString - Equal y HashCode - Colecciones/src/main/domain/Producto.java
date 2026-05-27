@@ -79,7 +79,7 @@ public class Producto extends Base {
         }
 
         Producto producto = (Producto) o;
-        return Objects.equals(nombre, producto.nombre);
+        return Objects.equals(nombre, producto.getNombre());
     }
 
     @Override
@@ -89,7 +89,13 @@ public class Producto extends Base {
 
     @Override
     public String toString() {
-        return "Producto{" + super.toString() + ", nombre='" + nombre + "', descripcion='" + descripcion + "', precio=$" + precio + ", stock=" + stock + ", imagen='" + imagen + "', disponible=" + disponible + "}";
+        return "Producto{" + super.toString() +
+                ", nombre='" + nombre + '\'' +
+                ", precio=$" + precio +
+                ", descripcion='" + descripcion + '\'' +
+                ", stock=" + stock +
+                ", imagen='" + imagen + '\'' +
+                ", disponible=" + disponible + "}";
     }
 
 }

@@ -1,6 +1,7 @@
 package main.domain;
 
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 import main.domain.base.Base;
@@ -81,6 +82,32 @@ public class Usuario extends Base {
 
     public void addPedido(Pedido pedido) {
         this.pedidos.add(pedido);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (!super.equals(o)) {
+            return false;
+        }
+        
+        Usuario usuario = (Usuario) o;
+        return Objects.equals(mail, usuario.mail);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), mail);
+    }
+
+    @Override
+    public String toString() {
+        return "Usuario{" + super.toString() +
+                ", nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", mail='" + mail + '\'' +
+                ", celular='" + celular + '\'' +
+                ", rol=" + rol +
+                ", cantidadPedidos=" + pedidos.size() + "}";
     }
 
 }

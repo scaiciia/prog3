@@ -57,7 +57,7 @@ public class DetallePedido extends Base {
         }
 
         DetallePedido detalle = (DetallePedido) o;
-        return Objects.equals(producto, detalle.producto);
+        return Objects.equals(producto, detalle.getProducto());
     }
 
     @Override
@@ -67,7 +67,10 @@ public class DetallePedido extends Base {
 
     @Override
     public String toString() {
-        return "DetallePedido{" + super.toString() + ", cantidad=" + cantidad + ", subtotal=$" + subtotal + ", producto=" + (producto != null ? producto.getNombre() : "Sin producto") + "}";
+        return "DetallePedido{" +
+                "producto=" + (producto != null ? producto.getNombre() : "null") +
+                ", cantidad=" + cantidad +
+                ", subtotal=$" + subtotal + '}';
     }
 
 }

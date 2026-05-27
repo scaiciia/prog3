@@ -2,6 +2,7 @@ package main.domain;
 
 import java.time.LocalDate;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 import main.domain.base.Base;
@@ -88,6 +89,31 @@ public class Pedido extends Base implements Calculabe {
             detalles.remove(aEliminar);
             calcularTotal();
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (!super.equals(o)) {
+            return false;
+        }
+
+        Pedido pedido = (Pedido) o;
+        return Objects.equals(fecha, pedido.getFecha());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), fecha);
+    }
+
+    @Override
+    public String toString() {
+        return "Pedido{" + super.toString() +
+                ", fecha=" + fecha +
+                ", estado=" + estado +
+                ", formaPago=" + formaPago +
+                ", total=$" + total +
+                ", detalles=" + detalles + '}';
     }
 
 }
