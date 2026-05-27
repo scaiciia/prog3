@@ -1,6 +1,7 @@
 package main.domain;
 
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 import main.domain.base.Base;
@@ -31,6 +32,34 @@ public class Categoria extends Base {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public Set<Producto> getProductos() {
+        return this.productos;
+    }
+
+    public void addProducto(Producto producto) {
+        this.productos.add(producto);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (!super.equals(o)) {
+            return false;
+        }
+
+        Categoria cat = (Categoria) o;
+        return Objects.equals(nombre, cat.nombre);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), nombre);
+    }
+
+    @Override
+    public String toString() {
+        return "Categoria{" + super.toString() + ", nombre='" + nombre + "', descripcion='" + descripcion + "'}";
     }
 
 }
