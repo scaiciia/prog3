@@ -13,6 +13,8 @@ import main.domain.enums.Rol;
 public class Main {
     public static void main(String[] args) {
 
+        System.out.println("=========================================================================");
+        System.out.println("3 - Instanciaciones");
         // 3 Categorias
         Categoria catElectro = new Categoria(1L, "Electrodomésticos", "Artículos para el hogar");
         Categoria catTecno = new Categoria(2L, "Tecnología", "Dispositivos móviles y hardware");
@@ -40,6 +42,18 @@ public class Main {
         Producto p10 = new Producto(10L, "Pava Eléctrica", 28000.0, "Corte mate automatico", 15, "pava.png", true);
         catElectro.addProducto(p10);
 
+        Set<Producto> inventario = new HashSet<>();
+        inventario.add(p1); 
+        inventario.add(p2); 
+        inventario.add(p3);
+        inventario.add(p4); 
+        inventario.add(p5); 
+        inventario.add(p6);
+        inventario.add(p7); 
+        inventario.add(p8); 
+        inventario.add(p9); 
+        inventario.add(p10);
+
         // 2 Usuarios
         Usuario user1 = new Usuario(1L, "Santiago", "Caiciia", "scaiciia@mail.com", "11223344", "1234", Rol.ADMIN);
         Usuario user2 = new Usuario(2L, "Juan", "Pérez", "jperez@mail.com", "55667788", "abcd", Rol.USUARIO);
@@ -64,5 +78,38 @@ public class Main {
         Set<Usuario> usuarios = new HashSet<>();
         usuarios.add(user1);
         usuarios.add(user2);
+
+        System.out.println("=========================================================================");
+        System.out.println("4 - Reportes por consola");
+        System.out.println("Producto:");
+        System.out.println(p4.toString());
+        System.out.println("");
+        System.out.println("Listado de productos cargados:");
+        for (Producto prod : inventario) {
+            System.out.println(prod.toString());
+        }
+        System.out.println("");
+        System.out.println("Pedidos del usuario con más compras:");
+        if (user1.getPedidos().size() > user2.getPedidos().size()) {
+            for(Pedido ped : user1.getPedidos()) {
+                System.out.println(ped.toString());
+            }
+        } else {
+            for(Pedido ped : user2.getPedidos()) {
+                System.out.println(ped.toString());
+            }
+        }
+
+        System.out.println("=========================================================================");
+        System.out.println("5 - Instancia duplicada");
+        Producto productoChino = new Producto(4L, "Celular S20 FE", 999999.0, "Celular chino", 3, "celuChino.png", false);
+
+        System.out.println("\nBuscando coincidencia: ");
+        for(Producto prod : inventario) {
+            if(prod.equals(productoChino)) {
+                System.out.println("Coincide con: " + prod.toString());
+            }
+        }
+        System.out.println("=========================================================================");
     }
 }
