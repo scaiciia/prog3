@@ -1,14 +1,13 @@
-package main.domain;
+package com.tup.programacion3.entities;
+
+import com.tup.programacion3.base.Base;
+import com.tup.programacion3.enums.Rol;
 
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
-import main.domain.base.Base;
-import main.domain.enums.Rol;
-
 public class Usuario extends Base {
-
     private String nombre;
     private String apellido;
     private String mail;
@@ -18,7 +17,7 @@ public class Usuario extends Base {
     private Set<Pedido> pedidos = new HashSet<>();
 
     public Usuario(Long id, String nombre, String apellido, String mail, String celular,
-                    String contraseña, Rol rol) {
+                   String contraseña, Rol rol) {
         super(id);
         this.nombre = nombre;
         this.apellido = apellido;
@@ -89,7 +88,7 @@ public class Usuario extends Base {
         if (!super.equals(o)) {
             return false;
         }
-        
+
         Usuario usuario = (Usuario) o;
         return Objects.equals(mail, usuario.mail);
     }
@@ -109,5 +108,4 @@ public class Usuario extends Base {
                 ", rol=" + rol +
                 ", cantidadPedidos=" + pedidos.size() + "}";
     }
-
 }

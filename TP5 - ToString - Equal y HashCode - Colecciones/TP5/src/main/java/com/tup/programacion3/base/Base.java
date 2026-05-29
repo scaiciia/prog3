@@ -1,10 +1,6 @@
-package main.domain.base;
-
-import java.time.LocalDate;
-import java.util.Objects;
+package com.tup.programacion3.base;
 
 public abstract class Base {
-
     private Long id;
     private boolean eliminado;
     private LocalDate createdAt;
@@ -62,5 +58,4 @@ public abstract class Base {
     public String toString() {
         return "id=" + id + ", eliminado=" + eliminado + ", createdAt=" + createdAt;
     }
-
 }

@@ -1,14 +1,14 @@
-package main;
+package com.tup.programacion3;
+
+import com.tup.programacion3.entities.Categoria;
+import com.tup.programacion3.entities.Pedido;
+import com.tup.programacion3.entities.Producto;
+import com.tup.programacion3.entities.Usuario;
+import com.tup.programacion3.enums.FormaPago;
+import com.tup.programacion3.enums.Rol;
 
 import java.util.HashSet;
 import java.util.Set;
-
-import main.domain.Categoria;
-import main.domain.Pedido;
-import main.domain.Producto;
-import main.domain.Usuario;
-import main.domain.enums.FormaPago;
-import main.domain.enums.Rol;
 
 public class Main {
     public static void main(String[] args) {
@@ -43,15 +43,15 @@ public class Main {
         catElectro.addProducto(p10);
 
         Set<Producto> inventario = new HashSet<>();
-        inventario.add(p1); 
-        inventario.add(p2); 
+        inventario.add(p1);
+        inventario.add(p2);
         inventario.add(p3);
-        inventario.add(p4); 
-        inventario.add(p5); 
+        inventario.add(p4);
+        inventario.add(p5);
         inventario.add(p6);
-        inventario.add(p7); 
-        inventario.add(p8); 
-        inventario.add(p9); 
+        inventario.add(p7);
+        inventario.add(p8);
+        inventario.add(p9);
         inventario.add(p10);
 
         // 2 Usuarios

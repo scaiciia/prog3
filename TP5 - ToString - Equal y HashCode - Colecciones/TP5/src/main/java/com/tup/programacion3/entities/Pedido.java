@@ -1,17 +1,16 @@
-package main.domain;
+package com.tup.programacion3.entities;
+
+import com.tup.programacion3.base.Base;
+import com.tup.programacion3.enums.Estado;
+import com.tup.programacion3.enums.FormaPago;
+import com.tup.programacion3.interfaces.Calculable;
 
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
-import main.domain.base.Base;
-import main.domain.enums.Estado;
-import main.domain.enums.FormaPago;
-import main.domain.interfaces.Calculabe;
-
-public class Pedido extends Base implements Calculabe {
-
+public class Pedido extends Base implements Calculable {
     private LocalDate fecha;
     private Estado estado;
     private Double total;
@@ -115,5 +114,4 @@ public class Pedido extends Base implements Calculabe {
                 ", total=$" + total +
                 ", detalles=" + detalles + '}';
     }
-
 }

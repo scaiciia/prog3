@@ -1,13 +1,12 @@
-package main.domain;
+package com.tup.programacion3.entities;
+
+import com.tup.programacion3.base.Base;
 
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
-import main.domain.base.Base;
-
 public class Categoria extends Base {
-    
     private String nombre;
     private String descripcion;
     private Set<Producto> productos = new HashSet<>();
@@ -63,5 +62,4 @@ public class Categoria extends Base {
                 ", nombre='" + nombre + '\'' +
                 ", descripcion='" + descripcion + '\'' + '}';
     }
-
 }

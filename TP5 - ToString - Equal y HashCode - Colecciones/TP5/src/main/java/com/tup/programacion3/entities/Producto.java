@@ -1,11 +1,10 @@
-package main.domain;
+package com.tup.programacion3.entities;
+
+import com.tup.programacion3.base.Base;
 
 import java.util.Objects;
 
-import main.domain.base.Base;
-
 public class Producto extends Base {
-
     private String nombre;
     private Double precio;
     private String descripcion;
@@ -97,5 +96,4 @@ public class Producto extends Base {
                 ", imagen='" + imagen + '\'' +
                 ", disponible=" + disponible + "}";
     }
-
 }

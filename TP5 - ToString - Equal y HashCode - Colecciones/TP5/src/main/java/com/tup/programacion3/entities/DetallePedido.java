@@ -1,11 +1,10 @@
-package main.domain;
+package com.tup.programacion3.entities;
+
+import com.tup.programacion3.base.Base;
 
 import java.util.Objects;
 
-import main.domain.base.Base;
-
 public class DetallePedido extends Base {
-
     private int cantidad;
     private Double subtotal;
     private Producto producto;
@@ -72,5 +71,4 @@ public class DetallePedido extends Base {
                 ", cantidad=" + cantidad +
                 ", subtotal=$" + subtotal + '}';
     }
-
 }
