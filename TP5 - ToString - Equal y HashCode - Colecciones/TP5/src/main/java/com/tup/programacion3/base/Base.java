@@ -1,5 +1,8 @@
 package com.tup.programacion3.base;
 
+import java.time.LocalDate;
+import java.util.Objects;
+
 public abstract class Base {
     private Long id;
     private boolean eliminado;
